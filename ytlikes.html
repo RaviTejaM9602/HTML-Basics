@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .fa {
+        font-size: 50px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .fa:hover {
+        color: darkblue;
+      }
+      .video{
+
+        align-items: center;
+
+      }
+    </style>
+    <title>Youtube video Likes and dislikes</title>
+  </head>
+  <body>    
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/FIORjGvT0kk"
+      frameborder="0"
+      allow="accelerometer; autoplay; 
+       clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe
+    ><br /><br />
+    <i onclick="like()" class="fa fa-thumbs-up"></i> 
+    &nbsp;&nbsp;&nbsp;
+    <span id="likes">0</span>&nbsp;&nbsp;&nbsp;
+    </span>
+    <i onclick="dislike()" class="fa fa-thumbs-down"></i> 
+     &nbsp;&nbsp;&nbsp;
+     <span id="dislikes">0</span>&nbsp;&nbsp;&nbsp;
+    <script>
+      var like_count = 0;
+      var dislike_count = 0;
+      function like() {
+        like_count++;        
+        document.getElementById('likes').innerHTML=like_count;
+        if (dislike_count < 1){
+          document.getElementById('dislikes').innerHTML= 0 ;          
+        }else{
+        document.getElementById('dislikes').innerHTML=dislike_count--; 
+        }
+      }
+        function dislike() {
+        dislike_count++;       
+        document.getElementById('dislikes').innerHTML=dislike_count;
+        if (like_count < 1){
+          document.getElementById('likes').innerHTML= 0 ;          
+        }else{
+        document.getElementById('likes').innerHTML= like_count--;; 
+        }
+      }
+    </script>
+  </body>
+</html>
